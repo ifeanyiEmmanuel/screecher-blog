@@ -146,9 +146,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_URL = '/static/'
 
 AUTH_USER_MODEL='account.AccountUser'
 LOGIN_URL='login'
@@ -161,7 +159,11 @@ LOGOUT_URL='logout'
 
 #STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles')
+] 
 
+STATIC_ROOT =os.path.join(BASE_DIR,'static_cdn_test')
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'mediafiles')
 
