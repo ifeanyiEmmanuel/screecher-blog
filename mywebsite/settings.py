@@ -25,7 +25,7 @@ SECRET_KEY = 'nb7m1a2l))8cejip#*bwcr5pnkailc@ruvj@6eo(^dhu77$4+%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['screecher-blog-f0e013ee4418.herokuapp.com','192.168.43.1','127.0.0.1']
+ALLOWED_HOSTS = ['screecher-d6af0202b1b5.herokuapp.com','192.168.43.1','127.0.0.1']
 
 
 # Application definition
@@ -146,7 +146,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 AUTH_USER_MODEL='account.AccountUser'
 LOGIN_URL='login'
 LOGIN_REDIRECT_URL='home'
@@ -158,10 +161,7 @@ LOGOUT_URL='logout'
 
 #STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
-] 
-STATIC_ROOT =os.path.join(BASE_DIR,'static_cdn_test')
+
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'mediafiles')
 
@@ -231,13 +231,13 @@ BOOTSTRAP5 = {
 
 
 
-CSRF_TRUSTED_ORIGINS = ['https://screecher-blog-f0e013ee4418.herokuapp.com',"http://127.0.0.1:8000"]
+CSRF_TRUSTED_ORIGINS = ['https://screecher-d6af0202b1b5.herokuapp.com',"http://127.0.0.1:8000"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
-   "https://screecher-blog-f0e013ee4418.herokuapp.com",
+   "https://screecher-d6af0202b1b5.herokuapp.com",
     "http://127.0.0.1:8000",
 ]
 
