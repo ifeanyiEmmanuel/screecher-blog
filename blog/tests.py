@@ -54,10 +54,10 @@ class DetailViewTest(TestCase):
 		if  not user == future_post.user:
 			url=reverse('detail',args=(future_post.slug,))
 			response=self.client.get(url)
-			self.assertEquals(response.status_code,200)
+			self.assertEqual(response.status_code,200)
 			
 		else:
-			self.assertEquals(response.status_code,404)
+			self.assertEqual(response.status_code,404)
 		
 			return HttpResponseNotFound('<h1>Page not found</h1>')
 			
