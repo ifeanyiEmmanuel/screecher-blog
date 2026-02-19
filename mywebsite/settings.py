@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
-    'fontawesomefree',
+    #'fontawesomefree',
     "corsheaders",
     'django_cleanup.apps.CleanupConfig',
 ]
